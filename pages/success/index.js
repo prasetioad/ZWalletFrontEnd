@@ -104,13 +104,13 @@ function success () {
                 <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
                   <div className={stylesearch.popUpCard}>
                     <div className={stylesearch.opUpContent}>
-                        <p><span>Enter Pin to Transfer</span></p>
-                        <p>Enter your 6 digits PIN for confirmation to continue transferring money. </p>
-                      </div>
+                      <p><span>Enter Pin to Transfer</span></p>
+                      <p>Enter your 6 digits PIN for confirmation to continue transferring money. </p>
+                    </div>
 
                     <div className={stylesearch.pinInput}>
-                        <input type='pin' name='pin' id='' />
-                      </div>
+                      <input type='pin' name='pin' id='' />
+                    </div>
                   </div>
                 </Modal>
               </div>

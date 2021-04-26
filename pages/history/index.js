@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../../component/navbar'
-import Footer from '../../component/footer'
 import style from '../../styles/home/home.module.css'
 import stylehis from '../../styles/history/history.module.css'
-import CardDashboard from '../../component/cardDashboard'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
@@ -67,22 +64,22 @@ function history () {
               {data && data.map(item => {
                 return (
                   <div className={style.dashHistoryList}>
-                      <div className={style.dashHistImage}>
-                        <div className={style.dashHistImg}>
-                            <img src={item.avatar} alt='' />
-                          </div>
-                        <div className={style.dashHistProf}>
-                            {item.desc == 'Transfer'
-                                ? <p><span>{item.receiver}</span></p> : <p><span>{item.sender}</span></p>}
-                            <p className='status'>{item.desc}</p>
-                          </div>
+                    <div className={style.dashHistImage}>
+                      <div className={style.dashHistImg}>
+                        <img src={item.avatar} alt='' />
                       </div>
-                      <div>
+                      <div className={style.dashHistProf}>
                         {item.desc == 'Transfer'
-                            ? <p id='count' style={{ color: 'red' }}>{`-Rp${item.amount}`}</p>
-                            : <p id='count' style={{ color: 'green' }}>{`+Rp${item.amount}`}</p>}
+                          ? <p><span>{item.receiver}</span></p> : <p><span>{item.sender}</span></p>}
+                        <p className='status'>{item.desc}</p>
                       </div>
                     </div>
+                    <div>
+                      {item.desc == 'Transfer'
+                        ? <p id='count' style={{ color: 'red' }}>{`-Rp${item.amount}`}</p>
+                        : <p id='count' style={{ color: 'green' }}>{`+Rp${item.amount}`}</p>}
+                    </div>
+                  </div>
                 )
               })}
             </div>

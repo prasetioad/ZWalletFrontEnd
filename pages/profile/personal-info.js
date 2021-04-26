@@ -72,11 +72,11 @@ function personal () {
                 <div className={stylesearch.personalBlockPhone}>
                   <div>
                     <div className={stylesearch.personalBlockInit}>
-                        <p>Phone Number</p>
-                      </div>
+                      <p>Phone Number</p>
+                    </div>
                     <div className={stylesearch.personalBlockObj}>
-                        <p>{user.phone}</p>
-                      </div>
+                      <p>{user.phone}</p>
+                    </div>
                   </div>
                   <div>
                     <button onClick={() => managePhone()}>Manage</button>

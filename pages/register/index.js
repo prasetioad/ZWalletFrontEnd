@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // Import the FontAwesomeIcon component
-import { faPersonBooth, faMailBulk, faLock } from '@fortawesome/free-solid-svg-icons' // import the icons you need
 
 function register () {
   const [data, setData] = useState({

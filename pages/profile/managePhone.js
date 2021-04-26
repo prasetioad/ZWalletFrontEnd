@@ -58,11 +58,11 @@ function managePhone () {
                 <div className={stylesearch.personalBlockPhone}>
                   <div>
                     <div className={stylesearch.personalBlockInit}>
-                        <p>Primary</p>
-                      </div>
+                      <p>Primary</p>
+                    </div>
                     <div className={stylesearch.personalBlockObj}>
-                        <p>{data.phone}</p>
-                      </div>
+                      <p>{data.phone}</p>
+                    </div>
                   </div>
                   <div>
                     <FontAwesomeIcon icon={faTrash} onClick={(e) => deletePhone(e)} />
