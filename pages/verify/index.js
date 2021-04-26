@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
-import process from '../next.config'
 import { useRouter } from 'next/router'
 import Swal from 'sweetalert2'
 
