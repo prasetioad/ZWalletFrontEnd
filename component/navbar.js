@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import style from '../styles/navbar/navbar.module.css'
 import axios from 'axios'
 
-function Navbar ({ user, res }) {
+function Navbar () {
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -27,7 +27,6 @@ function Navbar ({ user, res }) {
       console.log('error')
     }
   }, [])
-  console.log('ini dariserver', user, res)
   return (
     <div>
       <div className={style.navbarContainer}>
@@ -54,12 +53,11 @@ function Navbar ({ user, res }) {
     </div>
   )
 }
-Navbar.getInitialProps = async function () {
-  const res = await axios.get('http://localhost:3600/v1/users')
-  const user = await res.data
-  return {
-    user: user,
-    res: res
-  }
-}
+// Navbar.getInitialProps = async function () {
+//   const res = await axios.get('http://localhost:3600/v1/users')
+//   const user = await res.json()
+//   return {
+//     user
+//   }
+// }
 export default Navbar

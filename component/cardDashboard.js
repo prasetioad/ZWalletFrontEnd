@@ -4,11 +4,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 function cardDashboard () {
-  const router = useRouter()
-
-  const homeButton = () => {
-
-  }
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')

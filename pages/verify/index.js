@@ -15,13 +15,13 @@ export default function verify (props) {
         router.push('./login')
       }).catch(() => {
         Swal.fire('Opss!', 'Email sudah terdaftar')
-        router.push('./login')
+        // router.push('./login')
       })
   }, [])
   console.log(router)
   return (
     <div>
-      <h1>cek</h1>
+      <h1>Thanks for register</h1>
     </div>
   )
 }

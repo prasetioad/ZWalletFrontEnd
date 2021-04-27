@@ -19,6 +19,9 @@ function success () {
   }
 
   useEffect(() => {
+    if(localStorage.getItem('token') === undefined){
+      router.push('./login')
+    }
     setUser(JSON.parse(localStorage.getItem('user')))
     setTarget(JSON.parse(localStorage.getItem('state')))
     setAmount(JSON.parse(localStorage.getItem('amount')))
