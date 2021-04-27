@@ -67,7 +67,7 @@ function personal () {
                   <input type='password' name='reType' placeholder='Repeat new password' id='' onChange={(e) => { onHandleChange(e) }} />
                   <FontAwesomeIcon icon={faEyeSlash} /> <br />
                   {password.new !== password.reType
-                      ? <div style={{ color: 'red' }}><p>Your password not match!</p></div> : <div />}
+                    ? <div style={{ color: 'red' }}><p>Your password not match!</p></div> : <div />}
                   <button onClick={(e) => handleChangePassword(e)}> Change Password </button>
                 </form>
               </div>

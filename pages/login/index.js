@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // Import the FontAwesomeIcon component
-import { faPersonBooth, faMailBulk, faLock } from '@fortawesome/free-solid-svg-icons' // import the icons you need
 import Link from 'next/link'
-import { route } from 'next/dist/next-server/server/router'
 import { useRouter } from 'next/router'
 
 function login () {

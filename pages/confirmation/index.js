@@ -4,7 +4,6 @@ import stylehis from '../../styles/history/history.module.css'
 import stylesearch from '../../styles/search/search.module.css'
 import axios from 'axios'
 import Modal from 'react-modal'
-import Link from 'next/link'
 import Swal from 'sweetalert2'
 import { useRouter } from 'next/router'
 // import PinInput from 'react-pin-input'
@@ -114,12 +113,12 @@ function confirmation () {
                 <div className={stylesearch.dashHistoryList}>
                   <div className={stylesearch.dashHistImage}>
                     <div className={stylesearch.dashHistImg}>
-                        <img src={target.avatar} alt='' />
-                      </div>
+                      <img src={target.avatar} alt='' />
+                    </div>
                     <div className={style.dashHistProf}>
-                        <p><span>{target.userName}</span></p>
-                        <p className='searchNum'>{target.phone}</p>
-                      </div>
+                      <p><span>{target.userName}</span></p>
+                      <p className='searchNum'>{target.phone}</p>
+                    </div>
                   </div>
                 </div>
                 <div>
@@ -130,33 +129,33 @@ function confirmation () {
                 <div className={stylesearch.dashHistoryListConfirm}>
                   <div className={stylesearch.dashHistImage}>
                     <div className={style.dashHistProf}>
-                        <p className='searchNum'>Amount</p>
-                        <p><span>{`Rp.${amount.amount}`}</span></p>
-                      </div>
+                      <p className='searchNum'>Amount</p>
+                      <p><span>{`Rp.${amount.amount}`}</span></p>
+                    </div>
                   </div>
                 </div>
                 <div className={stylesearch.dashHistoryListConfirm}>
                   <div className={stylesearch.dashHistImage}>
                     <div className={style.dashHistProf}>
-                        <p className='searchNum'>Balance Left</p>
-                        <p><span>{`Rp.${user.balance - amount.amount}`}</span></p>
-                      </div>
+                      <p className='searchNum'>Balance Left</p>
+                      <p><span>{`Rp.${user.balance - amount.amount}`}</span></p>
+                    </div>
                   </div>
                 </div>
                 <div className={stylesearch.dashHistoryListConfirm}>
                   <div className={stylesearch.dashHistImage}>
                     <div className={style.dashHistProf}>
-                        <p className='searchNum'>Date & Time</p>
-                        <p><span>{Date()}</span></p>
-                      </div>
+                      <p className='searchNum'>Date & Time</p>
+                      <p><span>{Date()}</span></p>
+                    </div>
                   </div>
                 </div>
                 <div className={stylesearch.dashHistoryListConfirm}>
                   <div className={stylesearch.dashHistImage}>
                     <div className={style.dashHistProf}>
-                        <p className='searchNum'>Notes</p>
-                        <p><span>{notes.notes}</span></p>
-                      </div>
+                      <p className='searchNum'>Notes</p>
+                      <p><span>{notes.notes}</span></p>
+                    </div>
                   </div>
                 </div>
                 <div className={stylesearch.continue}>
@@ -165,32 +164,32 @@ function confirmation () {
                 <div className={stylesearch.confirmPopup}>
                   <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={customStyles}>
                     <div className={stylesearch.popUpCard}>
-                        <div className='' id='pin'>
-                            <div><h3>Enter PIN to Transfer</h3></div>
-                            <div><p>Enter your 6 digits PIN for confirmation to continue transferring money. </p></div>
-                            <>
-                                <PinInput
-                                    length={6}
-                                    initialValue=''
-                                    secret
-                                    onChange={(value, index) => { handleInputPin(value) }}
-                                    type='numeric'
-                                    inputMode='number'
-                                    style={{ padding: '10px' }, { borderRadius: '10px' }, { borderWidth: '1px' }, { borderStyle: 'none' }}
-                                    inputStyle={{ borderRadius: '10px' }}
-                                    inputFocusStyle={{ color: 'blue' }}
-                                    onComplete={(value, index) => { }}
-                                    autoSelect
-                                    regexCriteria={/^[ A-Za-z0-9_@./#&+-]*$/}
-                                  />
-                              </>
-                            <div className='btn primary-btn'>
-                                <div>
-                                    <button onClick={(e) => { handleTransferNow(e) }}>Continue</button>
-                                  </div>
-                              </div>
+                      <div className='' id='pin'>
+                        <div><h3>Enter PIN to Transfer</h3></div>
+                        <div><p>Enter your 6 digits PIN for confirmation to continue transferring money. </p></div>
+                        <>
+                          <PinInput
+                            length={6}
+                            initialValue=''
+                            secret
+                            onChange={(value, index) => { handleInputPin(value) }}
+                            type='numeric'
+                            inputMode='number'
+                            style={{ padding: '10px' }, { borderRadius: '10px' }, { borderWidth: '1px' }, { borderStyle: 'none' }}
+                            inputStyle={{ borderRadius: '10px' }}
+                            inputFocusStyle={{ color: 'blue' }}
+                            onComplete={(value, index) => { }}
+                            autoSelect
+                            regexCriteria={/^[ A-Za-z0-9_@./#&+-]*$/}
+                          />
+                        </>
+                        <div className='btn primary-btn'>
+                          <div>
+                            <button onClick={(e) => { handleTransferNow(e) }}>Continue</button>
                           </div>
+                        </div>
                       </div>
+                    </div>
                   </Modal>
                 </div>
               </div>

@@ -53,9 +53,9 @@ function addPhone () {
       <div className={stylesearch.homeMainRightProfile}>
         <div className={stylesearch.profPersonal}>
           <div className={stylesearch.personalInfo}>
-            <p><span>Change Password</span></p>
+            <p><span>Add Phone Number</span></p>
             <div className={stylesearch.personalWeGot}>
-              <p> You must enter your current password and then type your new password twice. </p>
+              <p> Add at least one phone number for the transfer ID so you can start transfering your money to another user. </p>
             </div>
             <div className={stylesearch.personalInfoManage}>
               <div className={stylesearch.passwordForm}>

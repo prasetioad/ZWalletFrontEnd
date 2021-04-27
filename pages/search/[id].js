@@ -96,12 +96,12 @@ function transfer () {
                 <div className={[stylesearch.dashHistoryList, [' searchCard']].join(' ')}>
                   <div className={stylesearch.dashHistImage}>
                     <div className={stylesearch.dashHistImg}>
-                        <img src={state.avatar} alt='' />
-                      </div>
+                      <img src={state.avatar} alt='' />
+                    </div>
                     <div className={style.dashHistProf}>
-                        <p><span>{state.firstName + ' ' + state.lastName}</span></p>
-                        <p className='searchNum'>{state.phone}</p>
-                      </div>
+                      <p><span>{state.firstName + ' ' + state.lastName}</span></p>
+                      <p className='searchNum'>{state.phone}</p>
+                    </div>
                   </div>
                 </div>}
               <div id='transfer' className={[stylesearch.transfer, ['transfer']].join(' ')}>
@@ -111,19 +111,19 @@ function transfer () {
                 <form action=''>
                   {user &&
                     <div className={stylesearch.transferInput}>
-                        <input type='number' placeholder='0.00' name='balance' onChange={(e) => handleAmount(e)} />
-                        <p>{`Rp. ${user.balance} Available`}</p>
-                      </div>}
+                      <input type='number' placeholder='0.00' name='balance' onChange={(e) => handleAmount(e)} />
+                      <p>{`Rp. ${user.balance} Available`}</p>
+                    </div>}
                   <div className={stylesearch.addNotes}>
                     <input type='text' name='notes' placeholder='add some notes' className='glyphicon glyphicon-search' onChange={(e) => handleNotes(e)} />
                   </div>
                   <div className={stylesearch.flex}>
                     <div>
-                        <button onClick={() => { handleBack(e) }}>Back</button>
-                      </div>
+                      <button onClick={() => { handleBack(e) }}>Back</button>
+                    </div>
                     <div>
-                        <button onClick={(e) => handleContinue(e)}>Continue</button>
-                      </div>
+                      <button onClick={(e) => handleContinue(e)}>Continue</button>
+                    </div>
                   </div>
                 </form>
               </div>

@@ -63,16 +63,16 @@ function search () {
                 return (
                   <>
                     <div className={[stylesearch.dashHistoryList, [' searchCard']].join(' ')} onClick={() => onCLickhandler(item.userId)}>
-                        <div className={stylesearch.dashHistImage}>
-                            <div className={stylesearch.dashHistImg}>
-                                <img src={item.avatar} alt='' />
-                              </div>
-                            <div className={style.dashHistProf}>
-                                <p><span>{item.userName}</span></p>
-                                <p className='searchNum'>{item.phone}</p>
-                              </div>
-                          </div>
+                      <div className={stylesearch.dashHistImage}>
+                        <div className={stylesearch.dashHistImg}>
+                          <img src={item.avatar} alt='' />
+                        </div>
+                        <div className={style.dashHistProf}>
+                          <p><span>{item.userName}</span></p>
+                          <p className='searchNum'>{item.phone}</p>
+                        </div>
                       </div>
+                    </div>
                   </>
                 )
               })}

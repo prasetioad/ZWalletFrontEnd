@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // Import the FontAwesomeIcon component
-import { faPersonBooth, faMailBulk, faLock } from '@fortawesome/free-solid-svg-icons' // import the icons you need
+import { useRouter } from 'next/router'
 
 function register () {
+    const router =useRouter()
   const [data, setData] = useState({
     userName: null,
     email: null,
@@ -33,16 +33,19 @@ function register () {
           'check your email'
         )
       })
-      .catch((res) => {
+      .catch((err) => {
+          console.log(err);
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Something went wrong!',
-          footer: '<a href>Why do I have this issue?</a>'
+          text: 'Your Email has registered!'
         })
       })
   }
-  console.log(data.userName, data.email, data.password)
+  
+  const handleLogin=()=>{
+    router.push('/login')
+  }
   return (
     <div>
       <div className='register'>
@@ -81,7 +84,7 @@ function register () {
               <button onClick={() => { handleRegister() }}>Sign Up</button>
             </div>
             <div className='regisAlready'>
-              <p>Already have an account? Let’s Login</p>
+              <p>Already have an account? <span onClick={()=>{handleLogin()}}>Let’s Login</span></p>
             </div>
           </div>
         </div>

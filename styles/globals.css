@@ -132,6 +132,7 @@ Link {
   width: 433px;
   margin-top: 75px;
   height: 40px;
+  outline: none;
 }
 .regisForm p{
   text-align: right;
