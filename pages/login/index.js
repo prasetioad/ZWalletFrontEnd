@@ -51,7 +51,7 @@ function login () {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Something went wrong!'
+            text: 'Akun anda belum terdaftar!'
           })
         })
     } else {
