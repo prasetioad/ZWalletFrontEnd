@@ -102,7 +102,7 @@ function home () {
               <p>Balance</p>
             </div>
             <div className={style.totalBalance}>
-              <p>{data.balance}</p>
+              <p>Rp.{data.balance}</p>
             </div>
             <div className={style.phoneNumber}>
               <p>{data.phone}</p>
@@ -164,7 +164,7 @@ function home () {
                                       <img src={trx.avatar} alt='' />
                                     </div>
                                     <div className={style.dashHistProf}>
-                                      <p><span>{trx.sender}</span></p>
+                                      <p><span>Wisnu Prasetio</span></p>
                                       <p>{trx.desc}</p>
                                     </div>
                                   </div>

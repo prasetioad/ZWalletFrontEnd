@@ -39,7 +39,7 @@ function Navbar () {
           </div>
           <div className={style.navProfDetil}>
             <div className={style.navProfName}>
-              <p className={style.noMargin}>{data.firstName + ' ' + data.lastName} </p>
+              <p className={style.noMargin}>{data.userName} </p>
             </div>
             <div className={style.navProfPhone}>
               <p>{data.phone}</p>
