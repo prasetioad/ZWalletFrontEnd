@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# About
+Tikitz, aplikasi pemesanan tiket online yang dibuat menggunakan Javascript.
 
-First, run the development server:
+### About
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Teknologi
+* Javascript
+* Express js
+* React js
+* Mysql
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Home page
+![Untitled-7](https://user-images.githubusercontent.com/66661143/116281038-7e025a00-a7b3-11eb-87ca-7d021811ced8.jpg)
+### Movie Detil page
+Menampilkan detil pada movie yang ada sekaligus halaman yang menampilkan lokasi dan waktu yang tersedia untuk di pesan
+![Untitled-6](https://user-images.githubusercontent.com/66661143/116281036-7d69c380-a7b3-11eb-82a0-2744faf14c79.jpg)
+### Order page
+Menampilkan peta dari bangku-bangku yang tersedia.
+![ORDER](https://user-images.githubusercontent.com/66661143/116281019-7a6ed300-a7b3-11eb-8271-c7870e58b9d3.png)
+### Payment page
+Menampilkan detil dari pembelian tiket yang telah dipesan.
+![PAYMENT PAGE](https://user-images.githubusercontent.com/66661143/116281304-c6217c80-a7b3-11eb-980f-ec91420c2837.png)
+### Profile page
+![PROFIL](https://user-images.githubusercontent.com/66661143/116281028-7c389680-a7b3-11eb-89b6-635a8717ac5c.png)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Kunjungi
+* [Netlify](https://bioskopnya-wisnu.netlify.app/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Backend
+https://github.com/prasetioad/Intermediet-backend-tikitz-w6-Arkademy
