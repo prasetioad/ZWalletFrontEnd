@@ -21,6 +21,6 @@ ZWallet , aplikasi penyimpanan uang online yang memiliki fitur chart mutasi data
 ![Profil](https://user-images.githubusercontent.com/66661143/117105937-337f6f80-ada9-11eb-9bbf-a1dc98b9bfa9.jpg)  
 
 ### Kunjungi
-* -
+- https://zw-allet-front-end-ls26hj12z-prasetioad.vercel.app/login
 ### Backend
-* -
+- https://github.com/prasetioad/ZWallet-Backend
