@@ -13,6 +13,9 @@ function profile () {
   const [user, setUser] = useState()
 
   useEffect(() => {
+    if(localStorage.getItem('token') === undefined){
+      router.push('./login')
+    }
     axios.get(`${process.env.DB_HOST}/users/${localStorage.getItem('userId')}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -52,6 +55,7 @@ function profile () {
   }
   const handleLogout = () => {
     localStorage.clear('token')
+    localStorage.clear('userId')
     router.push('./login')
   }
   return (

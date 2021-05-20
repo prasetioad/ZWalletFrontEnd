@@ -6,7 +6,7 @@ import axios from 'axios'
 import Modal from 'react-modal'
 import Swal from 'sweetalert2'
 import { useRouter } from 'next/router'
-import PinInput from 'react-pin-input'
+// import PinInput from 'react-pin-input'
 
 function confirmation () {
   const router = useRouter()

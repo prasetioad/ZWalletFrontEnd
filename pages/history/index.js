@@ -16,6 +16,9 @@ function history () {
     mode: 'DESC'
   })
   useEffect(() => {
+    if(localStorage.getItem('token') === undefined){
+        router.push('./login')
+      }
     const sort = document.getElementsByTagName('select')
     setMode(sort.select.value)
     axios.get(`${process.env.DB_HOST}/trx?page=${index.page}&perPage=${index.perPage}&mode=${mode.mode}`, { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } })
@@ -95,9 +98,8 @@ function history () {
             </div>
             <div>
               <select name='select' id='sort' onChange={(e) => { handleMode(e) }}>
-              <option value='DESC'>DESC</option>
-                <option value='DESC'>DESC</option>
-                <option value='ASC'>ASCN</option>
+                <option value='DESC'>Newer</option>
+                <option value='ASC'>Longer</option>
                 <option value='2'>Week</option>
                 <option value='3'>Month</option>
               </select>

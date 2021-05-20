@@ -11,9 +11,11 @@ function topup () {
     setModalIsOpen(true)
   }
 
-  // const sendPinHandle = ()=>{
-  //     setModalIsOpen(false)
-  // }
+  useEffect(() => {
+    if(localStorage.getItem('token') === undefined){
+      router.push('./login')
+    }
+  }, [])
 
   return (
     <div>

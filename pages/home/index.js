@@ -24,6 +24,9 @@ function home () {
   })
 
   useEffect(() => {
+      if(localStorage.getItem('token') === undefined){
+        router.push('./login')
+      }
     if (window !== undefined) {
       if (localStorage.getItem('token')) {
         axios.get(`${process.env.DB_HOST}/users`, {

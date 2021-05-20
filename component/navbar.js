@@ -64,12 +64,11 @@ function Navbar ({ user, res, side}) {
     </div>
   )
 }
-Navbar.getInitialProps = async function () {
-  const res = await axios.get('http://localhost:3600/v1/users')
-  const user = await res.data
-  return {
-    user: user,
-    res: res
-  }
-}
+// Navbar.getInitialProps = async function () {
+//   const res = await axios.get('http://localhost:3600/v1/users')
+//   const user = await res.json()
+//   return {
+//     user
+//   }
+// }
 export default Navbar
