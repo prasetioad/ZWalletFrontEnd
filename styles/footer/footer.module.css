@@ -18,3 +18,23 @@
 .footerRight{ margin-top: 20px; display: flex; justify-content: space-evenly}
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
+
+@media only screen and (max-width: 600px) {
+    .footer{ 
+        display: block !important;
+        text-align: center;
+        height: 68px;
+        left: 0px;
+        top: 893px;
+        background: #6379F4;
+        font-family: 'Nunito Sans' sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        /* identical to box height, or 175% */
+        color: rgba(239, 239, 239, 0.9);
+    }
+    .footerReserved{margin-left: 2px; margin-top: 5px}
+    .footerRight{ margin-top: 0}
+}

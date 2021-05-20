@@ -1,9 +1,10 @@
 import React from 'react'
 import style from '../styles/home/home.module.css'
 import Link from 'next/link'
+import {FaAngleLeft} from 'react-icons/fa'
 import { useRouter } from 'next/router'
 
-function cardDashboard () {
+function cardDashboard ({side}) {
   const router = useRouter()
 
   const homeButton = () => {
@@ -14,9 +15,11 @@ function cardDashboard () {
     window.localStorage.removeItem('token')
     window.localStorage.removeItem('userId')
   }
+  
   return (
     <div className={style.homeMainLeft}>
       <div className={style.homeMainLeftTop}>
+        <FaAngleLeft onClick={side} className={style.angleLeft}/>
         <div className={style.dashboardMenu}>
           <div className={style.dashboardIcon}>
             <img src='./asset/grid.png' alt='' />

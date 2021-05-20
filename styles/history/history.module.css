@@ -14,3 +14,25 @@
     margin-top: 20px;
     margin-bottom: 0;
     color: #7A7886;}
+
+    
+@media only screen and (max-width: 600px){ 
+    .historyPageWrapper{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .dashboardTransHistory{
+        width: 95vw;
+        margin-left: 0;
+    }
+  .homeMainRight{
+      width: 95vw;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .searchWrapper{
+      margin-right: auto;
+      margin-left: auto;
+  }
+  .dashboardTransConfirm{ width: 85vw; height: 650px;  margin-top: 20px; margin-left: auto; margin-right: 20px; }
+}

@@ -89,9 +89,10 @@ function home () {
       }
     })
   }
-
+console.log('ini history',history);
+console.log('ini data',data);
   return (
-    <div>
+    <div className={style.homeMainRightWrapper}>
       <div className={style.homeMainRight}>
         <div className={style.dashboardBalance}>
           <div className={style.balanceDesc}>
@@ -158,12 +159,19 @@ function home () {
                                 <div className={style.dashHistoryList}>
                                   <div className={style.dashHistImage}>
                                     <div className={style.dashHistImg}>
-                                      <img src={trx.avatar} alt='' />
+                                      <img src={trx.avatar} alt='' /> 
                                     </div>
+                                    { trx && 
+                                    trx.desc == 'Transfer' ?
                                     <div className={style.dashHistProf}>
-                                      <p><span>Wisnu Prasetio</span></p>
+                                      <p><span>{trx.receiver}</span></p>
                                       <p>{trx.desc}</p>
-                                    </div>
+                                    </div> :
+                                     <div className={style.dashHistProf}>
+                                     <p><span>{trx.sender}</span></p>
+                                     <p>{trx.desc}</p>
+                                   </div>
+                                    }
                                   </div>
                                   <div>
                                     {trx.desc == 'Transfer'

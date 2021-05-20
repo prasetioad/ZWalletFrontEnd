@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import style from '../styles/navbar/navbar.module.css'
+import {FaBars} from 'react-icons/fa'
 import axios from 'axios'
 
-function Navbar ({ user, res }) {
+function Navbar ({ user, res, side}) {
   const [data, setData] = useState([])
+  const [screen, setScreen] = useState(false)
+  const [mobileBar, setMobileBar] = useState(false)
 
   useEffect(() => {
     if (window !== undefined) {
@@ -27,13 +30,16 @@ function Navbar ({ user, res }) {
       console.log('error')
     }
   }, [])
-  console.log('ini dariserver', user, res)
+
+  
+ 
   return (
     <div>
       <div className={style.navbarContainer}>
         <div className={style.navbarLeft}>
           <img src='/asset/Zwallet.png' alt='logo' />
         </div>
+       
         <div className={style.navbarRight}>
           <div className={style.navPorfil}>
             <img src={data.avatar} alt='' />
@@ -50,6 +56,10 @@ function Navbar ({ user, res }) {
             <img src='/asset/bell.png' alt='' />
           </div>
         </div>
+        <div className={style.mobileBar} onClick={side}>
+            <FaBars style={{color: '#6379F4', fontSize: '18px', }} />
+        </div>
+        
       </div>
     </div>
   )

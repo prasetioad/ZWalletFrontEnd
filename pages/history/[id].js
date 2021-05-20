@@ -4,30 +4,47 @@ import stylehis from '../../styles/history/history.module.css'
 import stylesearch from '../../styles/search/search.module.css'
 import Modal from 'react-modal'
 import Link from 'next/link'
+import axios from 'axios'
 import { useRouter } from 'next/router'
 
-function success () {
+function history ({item}) {
   const router = useRouter()
-  const [user, setUser] = useState()
-  const [target, setTarget] = useState()
-  const [amount, setAmount] = useState()
-  const [notes, setNotes] = useState()
-
-  const [modalIsOpen, setModalIsOpen] = useState(false)
-  function handlePin () {
-    setModalIsOpen(true)
-  }
+  const [state, setState] = useState()
+  const [user, setUser] =useState()
 
   useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem('user')))
-    setTarget(JSON.parse(localStorage.getItem('state')))
-    setAmount(JSON.parse(localStorage.getItem('amount')))
-    setNotes(JSON.parse(localStorage.getItem('notes')))
+    // if (router.query.id) {
+    //     if (!state) {
+    //       console.log(router)
+    //       axios.get(`http://localhost:3600/v1/trx/trxId/${router.query.id}`, {
+    //         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    //       })
+    //         .then((res) => {
+    //           console.log('ini query target', res)
+    //           setState(res.data.data[0])
+    //         })
+    //         .catch((err) => {
+    //           console.log(err)
+    //         })
+    //     }
+    //   }
+    setState(item)
+      if (localStorage.getItem('userId') !== undefined) {
+        const id = localStorage.getItem('userId')
+        axios.get(`http://localhost:3600/v1/users/${id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        })
+          .then((result) => {
+            setUser(result.data.data)
+            console.log('ini dari user', result.data.data)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      }
   }, [])
-
   return (
-    <div className={stylesearch.successWrapper}>
-      {notes &&
+    <div>{user &&
       <div className={stylesearch.homeMainRightSuccess}>
         <div className={stylehis.dashboardBottom}>
           <div className={stylehis.dashboardTransConfirm}>
@@ -44,7 +61,7 @@ function success () {
                 <div className={stylesearch.dashHistImage}>
                   <div className={style.dashHistProf}>
                     <p className='searchNum'>Amount</p>
-                    <p><span>{`Rp.${amount.amount}`}</span></p>
+                    <p><span>{`Rp.${state.amount}`}</span></p>
                   </div>
                 </div>
               </div>
@@ -52,7 +69,7 @@ function success () {
                 <div className={stylesearch.dashHistImage}>
                   <div className={style.dashHistProf}>
                     <p className='searchNum'>Balance Left</p>
-                    <p><span>{`Rp.${user.balance - amount.amount}`}</span></p>
+                    <p><span>{`Rp.${user.balance - state.amount}`}</span></p>
                   </div>
                 </div>
               </div>
@@ -60,7 +77,7 @@ function success () {
                 <div className={stylesearch.dashHistImage}>
                   <div className={style.dashHistProf}>
                     <p className='searchNum'>Date & Time</p>
-                    <p><span>{localStorage.getItem('date')}</span></p>
+                    <p><span>{state.dateTime}</span></p>
                   </div>
                 </div>
               </div>
@@ -68,7 +85,7 @@ function success () {
                 <div className={stylesearch.dashHistImage}>
                   <div className={style.dashHistProf}>
                     <p className='searchNum'>Notes</p>
-                    <p><span>{notes.notes}</span></p>
+                    <p><span>{state.notes}</span></p>
                   </div>
                 </div>
               </div>
@@ -80,40 +97,26 @@ function success () {
               <div className={stylesearch.dashHistoryList}>
                 <div className={stylesearch.dashHistImage}>
                   <div className={stylesearch.dashHistImg}>
-                    <img src='./asset/1.png' alt='' />
+                    <img src={state.avatar} alt='' />
                   </div>
                   <div className={style.dashHistProf}>
-                    <p><span>{target.userName}</span></p>
-                    <p className='searchNum'>{target.phone}</p>
+                    <p><span>{state.receiver}</span></p>
+                    <p className='searchNum'>{state.phone}</p>
                   </div>
                 </div>
               </div>
               <div className={stylesearch.continueSuccess}>
                 <div className={stylesearch.flex}>
-                  <div className={stylesearch.btnItem}>
+                  <div>
                     <button>share</button>
                   </div>
-                  <div className={stylesearch.btnItem}>
+                  <div>
                     <Link href='/confirmation'><button>Download PDF</button></Link>
                   </div>
-                  <div className={stylesearch.btnItem}>
+                  <div>
                     <Link href='/home'><button>Back to Home</button></Link>
                   </div>
                 </div>
-              </div>
-              <div className={stylesearch.confirmPopup}>
-                <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
-                  <div className={stylesearch.popUpCard}>
-                    <div className={stylesearch.opUpContent}>
-                      <p><span>Enter Pin to Transfer</span></p>
-                      <p>Enter your 6 digits PIN for confirmation to continue transferring money. </p>
-                    </div>
-
-                    <div className={stylesearch.pinInput}>
-                      <input type='pin' name='pin' id='' />
-                    </div>
-                  </div>
-                </Modal>
               </div>
             </div>
           </div>
@@ -122,5 +125,9 @@ function success () {
     </div>
   )
 }
-
-export default success
+export async function getServerSideProps(ctx) {
+    const res = await axios.get(`http://localhost:3600/v1/trx/trxId/${ctx.query.id}`)
+    const item = await res.data.data[0]
+    return { props: { key: item.id, item: item } }
+  }
+export default history

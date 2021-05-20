@@ -55,18 +55,20 @@ function profile () {
     router.push('./login')
   }
   return (
-    <div>
+    <div className={stylesearch.profilWrapper}>
       <div className={stylesearch.homeMainRightProfile}>
         <div className={stylesearch.dashboardTransProfile}>
           {user && <>
             <div className={stylesearch.profileImage}>
-              <img src={user.avatar} alt='avatar' />
+              <div>
+                <img src={user.avatar} alt='avatar' />
+              </div>
               <div>
                 <input type='file' id='avatar' onChange={(e) => photoChange(e)} /><label for='avatar'>edit</label>
               </div>
             </div>
             <div className={stylesearch.nameContact}>
-              <p><span>{user.firstName + ' ' + user.lastName}</span></p>
+              <p><span>{user.firstName + ' ' + user.lastName}</span></p><br/>
               <p>{user.phone}</p>
             </div>
                    </>}

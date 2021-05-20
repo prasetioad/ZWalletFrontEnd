@@ -44,7 +44,7 @@ function personal () {
   }
   console.log(password)
   return (
-    <div>
+    <div className={stylesearch.changePasswordWrapper}>
       <div className={stylesearch.homeMainRightProfile}>
         <div className={stylesearch.profPersonal}>
           <div className={stylesearch.personalInfo}>

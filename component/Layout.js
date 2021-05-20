@@ -8,6 +8,7 @@ import Login from '../pages/login'
 
 function Layout ({ children }) {
   const [theme, setTheme] = useState(false)
+  const [sidebar, setSideBar] = useState(false)
   useEffect(() => {
     const isLogin = () => {
       if (typeof window !== undefined) {
@@ -18,20 +19,51 @@ function Layout ({ children }) {
         }
       }
     }
+    if(window !== undefined){
+      if(window.screen.width >= 601) {
+        setSideBar(false)
+      }
+    }
     isLogin()
+    if(sidebar){
+      const bar = document.getElementById('bar')
+      bar.style.display ='none'
+    }
   }, [])
 
+
+  const handleSideBar =()=>{
+    console.log('fungsi jalan');
+    if(sidebar == false){
+      setSideBar(true)
+      showBar()
+    }else{
+      setSideBar(false)
+      showBar()
+    }
+  }
+const showBar=()=>{
+  console.log('bar berjalan');
+  const bar = document.getElementById('bar')
+  if(sidebar== false){
+    bar.style.display ='block'
+  }else{
+    bar.style.display ='none'
+  }
+}
+console.log(sidebar);
   return (
-    <div className='content'>
+    <div className='content' style={{margin: 'auto !important'}}>
       <Head>
         <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css' />
       </Head>
       {theme
-        ? <Navbar /> : <div />}
+        ? <Navbar  side={()=>handleSideBar()}/> : <div />}
       <div className={style.container}>
         <div className={style.homeMain}>
-          {theme
-            ? <CardDashboard /> : <div />}
+          {theme ? 
+            <div id='bar' className={style.bar}> <CardDashboard side={()=>handleSideBar()} /> </div>
+            : <div />}
           {/* { theme ? */}
           {children}
           {/* }  */}

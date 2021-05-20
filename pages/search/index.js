@@ -41,7 +41,7 @@ function search () {
       })
   }
   return (
-    <div>
+    <div className={stylehis.searchWrapper}>
       <div className={stylehis.homeMainRight}>
         <div className={stylehis.dashboardBottom}>
           <div className={stylehis.dashboardTransHistory}>

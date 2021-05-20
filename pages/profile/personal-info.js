@@ -33,7 +33,7 @@ function personal () {
   }
 
   return (
-    <div>
+    <div className={stylesearch.personalInfoWrapper}>
       <div className={stylesearch.homeMainRightProfile}>
         <div className={stylesearch.profPersonal}>
           <div className={stylesearch.personalInfo}>

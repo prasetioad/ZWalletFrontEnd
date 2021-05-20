@@ -3,8 +3,10 @@ import style from '../../styles/home/home.module.css'
 import stylehis from '../../styles/history/history.module.css'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { useRouter } from 'next/router'
 
 function history () {
+  const router = useRouter()
   const [data, setData] = useState()
   const [index, setIndex] = useState({
     page: 0,
@@ -20,6 +22,9 @@ function history () {
       .then((result) => { setData(result.data.data.rows) })
       .catch((err) => { console.log(err) })
     console.log(mode)
+    if(localStorage.getItem('token') == null){
+      router.push('./login')
+    }
   }, [mode.mode])
 
   const handleMode = (e) => {
@@ -48,7 +53,7 @@ function history () {
 
   console.log(mode)
   return (
-    <div>
+    <div className={stylehis.historyPageWrapper}>
       <div className={stylehis.homeMainRight}>
         <div className={stylehis.dashboardBottom}>
           <div className={stylehis.dashboardTransHistory}>
@@ -63,7 +68,7 @@ function history () {
               </div>
               {data && data.map(item => {
                 return (
-                  <div className={style.dashHistoryList}>
+                  <div className={style.dashHistoryList} onClick={()=>{router.push(`/history/${item.id}`)}}>
                     <div className={style.dashHistImage}>
                       <div className={style.dashHistImg}>
                         <img src={item.avatar} alt='' />
@@ -86,10 +91,11 @@ function history () {
           </div>
           <div className='sortHistory'>
             <div>
-              <button onClick={() => { handleBack() }}>Back</button>
+              <button onClick={() => { handleBack() }} style={{borderRadius: '6px', background: '#6379F4'}}>Back</button>
             </div>
             <div>
               <select name='select' id='sort' onChange={(e) => { handleMode(e) }}>
+              <option value='DESC'>DESC</option>
                 <option value='DESC'>DESC</option>
                 <option value='ASC'>ASCN</option>
                 <option value='2'>Week</option>
@@ -97,7 +103,7 @@ function history () {
               </select>
             </div>
             <div>
-              <button onClick={() => { handleNext() }}>Next</button>
+              <button onClick={() => { handleNext() }} style={{borderRadius: '6px', background: '#6379F4'}}>Next</button>
             </div>
           </div>
         </div>

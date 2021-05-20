@@ -28,9 +28,9 @@ function confirmation () {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      padding: '20px'
+      padding: '20px',
     },
-    height: '500px'
+    height: '500px',
   }
 
   useEffect(() => {
@@ -55,8 +55,8 @@ function confirmation () {
       const data = {
         userId: localStorage.getItem('userId'),
         amount: amount.amount,
-        sender: user.firstName + ' ' + user.LastName,
-        receiver: target.firstName + ' ' + target.LastName,
+        sender: user.userName,
+        receiver: target.serName,
         notes: notes.notes,
         balance: user.balance - amount.amount,
         destId: target.userId,
@@ -99,7 +99,7 @@ function confirmation () {
 
   }
   return (
-    <div>
+    <div className={stylesearch.confirmationWrapper}>
       {notes &&
         <div className={stylesearch.homeMainRight}>
           <div className={stylehis.dashboardBottom}>
