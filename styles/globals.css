@@ -206,5 +206,48 @@ Link {
 
 
 @media only screen and (max-width: 600px){ 
-  
+  .register{
+    display: flex; 
+    background: white;
+    justify-content: center;
+    width: 100vw;
+  }
+  .registerLeft{
+    display: none;
+  }
+  .registerRight{
+    width: 100%;
+  }
+  .registerContent{
+    margin-top: 121px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+  }
+  .regisForm input{
+    border: none;
+    border-bottom: 1.5px solid rgba(169, 169, 169, 0.6);
+    background: none;
+    width: 100%;
+    margin-top: 75px;
+    height: 40px;
+    outline: none;
+  }
+  .regsiButton button{
+    width: 100%;
+    margin-top: 50px;
+  }
+  .regisForm p{
+    text-align: right;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .regisAlready{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: center;
+    color: rgba(58, 61, 66, 0.8);
+    margin-top: 40px;
+  }
 }
