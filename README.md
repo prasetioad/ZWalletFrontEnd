@@ -71,7 +71,7 @@ npm start
 * https://github.com/prasetioad/ZWallet-Backend
 
 ## Live Demo
-* https://zw-allet-front-end-ls26hj12z-prasetioad.vercel.app/login
+* https://zwallet-sigma.vercel.app/login
 
 ## Author
 * [@prasetioad](https://github.com/prasetioad)
