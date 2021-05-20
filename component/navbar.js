@@ -36,10 +36,10 @@ function Navbar ({ user, res, side}) {
   return (
     <div>
       <div className={style.navbarContainer}>
+        <div className={style.navbarItemWrapper}>
         <div className={style.navbarLeft}>
           <img src='/asset/Zwallet.png' alt='logo' />
         </div>
-       
         <div className={style.navbarRight}>
           <div className={style.navPorfil}>
             <img src={data.avatar} alt='' />
@@ -60,6 +60,7 @@ function Navbar ({ user, res, side}) {
             <FaBars style={{color: '#6379F4', fontSize: '18px', }} />
         </div>
         
+      </div>
       </div>
     </div>
   )
