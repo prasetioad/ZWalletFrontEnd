@@ -43,7 +43,7 @@ function managePhone () {
   }
 
   return (
-    <div>
+    <div className={stylesearch.managePhoneWrapper}>
       <div className={stylesearch.homeMainRightProfile}>
         <div className={stylesearch.profPersonal}>
           <div className={stylesearch.personalInfo}>

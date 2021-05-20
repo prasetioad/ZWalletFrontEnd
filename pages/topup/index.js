@@ -18,7 +18,7 @@ function topup () {
   }, [])
 
   return (
-    <div>
+    <div className={stylesearch.topUpPageWrapper}>
       <div className={stylesearch.homeMainRight}>
         <div className={stylehis.dashboardBottom}>
           <div className={stylehis.dashboardTransConfirm}>

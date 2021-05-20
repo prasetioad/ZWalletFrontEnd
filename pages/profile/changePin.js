@@ -37,7 +37,7 @@ function changePin () {
       })
   }
   return (
-    <div>
+    <div className={stylesearch.changPinWrapper}>
       <div className={stylesearch.homeMainRightProfile}>
         <div className={stylesearch.profPersonal}>
           <div className={stylesearch.personalInfo}>

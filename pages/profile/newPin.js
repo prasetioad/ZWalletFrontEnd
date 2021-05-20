@@ -36,7 +36,7 @@ function newPin () {
       .catch((err) => { console.log(err) })
   }
   return (
-    <div>
+    <div className={stylesearch.newPinWrapper}>
       <div className={stylesearch.homeMainRightProfile}>
         <div className={stylesearch.profPersonal}>
           <div className={stylesearch.personalInfo}>
