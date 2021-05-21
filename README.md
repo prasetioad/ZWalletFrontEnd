@@ -49,7 +49,7 @@ npm start
 
 ## Screenshoots
 ### 1.) Login  
-![Login](https://user-images.githubusercontent.com/77045083/117056856-fc787200-ad46-11eb-8329-9d9aac0cf244.png | height=100)  
+<img src="https://user-images.githubusercontent.com/77045083/117056856-fc787200-ad46-11eb-8329-9d9aac0cf244.png"  height="100">
 ### 2.) Home  
 ![Home](https://user-images.githubusercontent.com/66661143/117105658-b227dd00-ada8-11eb-94e0-43e1835d85ed.jpg | height=100)  
 ### 3.) Transfer
