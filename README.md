@@ -64,9 +64,6 @@ npm start
 
 ## Documentation
 
-### Front End
-* https://github.com/prasetioad/ZWalletFrontEnd
-
 ### Back End
 * https://github.com/prasetioad/ZWallet-Backend
 
