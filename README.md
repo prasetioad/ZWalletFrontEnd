@@ -50,19 +50,19 @@ npm start
 ## Screenshoots 
 <p float="left">
  <div>
-1. Login page
+1. Login page <br>
 <img src="https://user-images.githubusercontent.com/77045083/117056856-fc787200-ad46-11eb-8329-9d9aac0cf244.png"  height="300"> 
  </div>
  <div>
-2. Dashboard
+2. Dashboard <br>
 <img src="https://user-images.githubusercontent.com/66661143/117105658-b227dd00-ada8-11eb-94e0-43e1835d85ed.jpg"  height="300"> 
   </div>
    <div>
-3. Transfer Detil
+3. Transfer Detil <br>
 <img src="https://user-images.githubusercontent.com/66661143/117105668-b522cd80-ada8-11eb-8325-664716bfbf5a.jpg"  height="300"> 
   </div>
   <div>
-4. Profil 
+4. Profil  <br>
 <img src="https://user-images.githubusercontent.com/66661143/117105937-337f6f80-ada9-11eb-9bbf-a1dc98b9bfa9.jpg"  height="300">
   </div>
 </p>
