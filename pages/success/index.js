@@ -27,7 +27,7 @@ function success () {
     setAmount(JSON.parse(localStorage.getItem('amount')))
     setNotes(JSON.parse(localStorage.getItem('notes')))
   }, [])
-
+  console.log(user);
   return (
     <div className={stylesearch.successWrapper}>
       {notes &&
@@ -83,7 +83,7 @@ function success () {
               <div className={stylesearch.dashHistoryList}>
                 <div className={stylesearch.dashHistImage}>
                   <div className={stylesearch.dashHistImg}>
-                    <img src='./asset/1.png' alt='' />
+                    <img src={target.avatar} alt='' />
                   </div>
                   <div className={style.dashHistProf}>
                     <p><span>{target.userName}</span></p>
