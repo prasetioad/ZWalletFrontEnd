@@ -111,10 +111,10 @@ console.log('ini data',data);
           </div>
           <div className={style.dashboardBtn}>
             <div className={style.btn} >
-              <button className={style.button}><img src='./asset/arrow-up.png' alt='' onClick={router.push('./search')}/>Transfer</button>
+              <button className={style.button}><img src='./asset/arrow-up.png' alt='' onClick={()=>{router.push('./search')}}/>Transfer</button>
             </div>
             <div className={style.btn} >
-              <button className={style.button}><img src='./asset/plus.png' alt='' onClick={router.push('./topup')} />Top Up</button>
+              <button className={style.button}><img src='./asset/plus.png' alt='' onClick={()=>{router.push('./topup')}} />Top Up</button>
             </div>
           </div>
         </div>
