@@ -16,7 +16,7 @@ function history ({item}) {
     // if (router.query.id) {
     //     if (!state) {
     //       console.log(router)
-    //       axios.get(`http://localhost:3600/v1/trx/trxId/${router.query.id}`, {
+    //       axios.get(`${process.env.DB_HOST}/trx/trxId/${router.query.id}`, {
     //         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     //       })
     //         .then((res) => {
@@ -31,7 +31,7 @@ function history ({item}) {
     setState(item)
       if (localStorage.getItem('userId') !== undefined) {
         const id = localStorage.getItem('userId')
-        axios.get(`http://localhost:3600/v1/users/${id}`, {
+        axios.get(`${process.env.DB_HOST}/users/${id}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         })
           .then((result) => {
@@ -126,7 +126,7 @@ function history ({item}) {
   )
 }
 export async function getServerSideProps(ctx) {
-    const res = await axios.get(`http://localhost:3600/v1/trx/trxId/${ctx.query.id}`)
+    const res = await axios.get(`${process.env.DB_HOST}/trx/trxId/${ctx.query.id}`)
     const item = await res.data.data[0]
     return { props: { key: item.id, item: item } }
   }
