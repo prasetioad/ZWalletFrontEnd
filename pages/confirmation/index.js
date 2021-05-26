@@ -68,14 +68,14 @@ function confirmation () {
         dateTime: new Date()
       }
       localStorage.setItem('date', Date())
-      axios.put(`http://localhost:3600/v1/users/transfer/${localStorage.getItem('userId')}`, data, {
+      axios.put(`${process.env.DB_HOST}/users/transfer/${localStorage.getItem('userId')}`, data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       })
         .then((result) => {
           console.log('jalan2')
-          axios.post('http://localhost:3600/v1/trx', data, {
+          axios.post(`${process.env.DB_HOST}/trx`, data, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
           })
             .then((trxres) => {
@@ -170,7 +170,8 @@ function confirmation () {
                     <div className={stylesearch.popUpCard}>
                       <div className='' id='pin'>
                         <div><h3>Enter PIN to Transfer</h3></div>
-                        <div><p>Enter your 6 digits PIN for confirmation to continue transferring money. </p></div>
+                        <div><p>Enter your 6 digits PIN for confirmation to continue transferring money.</p>
+                         <span style={{color: 'red'}}>Click Continue if you have no pin</span> </div>
                         <>
                           <PinInput
                             length={6}
