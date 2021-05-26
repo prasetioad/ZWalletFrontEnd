@@ -21,7 +21,7 @@ function transfer () {
     if (router.query.id) {
       if (!state) {
         console.log(router)
-        axios.get(`http://localhost:3600/v1/users/${router.query.id}`, {
+        axios.get(`${process.env.DB_HOST}/users/${router.query.id}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         })
           .then((res) => {
@@ -35,7 +35,7 @@ function transfer () {
     }
     if (localStorage.getItem('userId') !== undefined) {
       const id = localStorage.getItem('userId')
-      axios.get(`http://localhost:3600/v1/users/${id}`, {
+      axios.get(`${process.env.DB_HOST}/users/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       })
         .then((result) => {
