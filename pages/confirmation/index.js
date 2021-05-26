@@ -170,7 +170,8 @@ function confirmation () {
                     <div className={stylesearch.popUpCard}>
                       <div className='' id='pin'>
                         <div><h3>Enter PIN to Transfer</h3></div>
-                        <div><p>Enter your 6 digits PIN for confirmation to continue transferring money. </p></div>
+                        <div><p>Enter your 6 digits PIN for confirmation to continue transferring money.</p>
+                         <span style={{color: 'red'}}>Click Continue if you have no pin</span> </div>
                         <>
                           <PinInput
                             length={6}
