@@ -126,7 +126,7 @@ function history ({item}) {
   )
 }
 export async function getServerSideProps(ctx) {
-    const res = await axios.get(`http://localhost:3600/v1/trx/trxId/${ctx.query.id}`)
+    const res = await axios.get(`${process.env.DB_HOST}/trx/trxId/${ctx.query.id}`)
     const item = await res.data.data[0]
     return { props: { key: item.id, item: item } }
   }

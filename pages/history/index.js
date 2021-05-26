@@ -91,8 +91,7 @@ function history () {
                 )
               })}
             </div>
-          </div>
-          <div className='sortHistory'>
+            <div className='sortHistory' style={{alignItems: 'end'}}>
             <div>
               <button onClick={() => { handleBack() }} style={{borderRadius: '6px', background: '#6379F4'}}>Back</button>
             </div>
@@ -107,6 +106,7 @@ function history () {
             <div>
               <button onClick={() => { handleNext() }} style={{borderRadius: '6px', background: '#6379F4'}}>Next</button>
             </div>
+          </div>
           </div>
         </div>
       </div>

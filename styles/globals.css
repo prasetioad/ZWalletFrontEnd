@@ -203,6 +203,10 @@ Link {
 .sortHistory{
   display: flex; justify-content: space-around; align-items: center;
 }
+.sortHistory button{
+  color: white;
+  border: none;
+}
 
 
 @media only screen and (max-width: 600px){ 
