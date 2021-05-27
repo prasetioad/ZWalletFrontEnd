@@ -14,7 +14,7 @@ function transfer () {
   const router = useRouter()
   const [state, setState] = useState()
   const [amount, setAmount] = useState(0)
-  const [notes, setNotes] = useState()
+  const [notes, setNotes] = useState(null)
   const [show, setShow] = useState(false)
   const [user, setUser] = useState()
   useEffect(() => {
@@ -71,6 +71,12 @@ function transfer () {
     e.preventDefault()
     if (amount < 10000) {
       return Swal.fire('Mohon masukan jumlah kirim!')
+    } else if(notes == null){
+      return Swal.fire({
+        icon: 'warning',
+        title: 'Opps!',
+        text: 'isi dulu dong notesnya!'
+      })
     } else {
       localStorage.setItem('state', JSON.stringify(state))
       localStorage.setItem('amount', JSON.stringify(amount))

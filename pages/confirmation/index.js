@@ -39,9 +39,6 @@ function confirmation () {
     setAmount(JSON.parse(localStorage.getItem('amount')))
     setNotes(JSON.parse(localStorage.getItem('notes')))
     Modal.setAppElement('body')
-    if(localStorage.getItem('token') == null ){
-      router.push('../login')
-    }
     console.log( localStorage.getItem('token') );
   }, [])
 
