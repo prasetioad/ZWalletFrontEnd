@@ -99,6 +99,7 @@ function confirmation () {
   const handleCheckPin = () => {
 
   }
+  console.log(user);
   return (
     <div className={stylesearch.confirmationWrapper}>
       {notes &&

@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import style from '../styles/navbar/navbar.module.css'
 import {FaBars} from 'react-icons/fa'
 import axios from 'axios'
+import { useRouter } from 'next/router'
 
 function Navbar ({ user, res, side}) {
+  const router = useRouter()
   const [data, setData] = useState([])
   const [screen, setScreen] = useState(false)
   const [mobileBar, setMobileBar] = useState(false)
@@ -37,7 +39,7 @@ function Navbar ({ user, res, side}) {
     <div>
       <div className={style.navbarContainer}>
         <div className={style.navbarItemWrapper}>
-        <div className={style.navbarLeft}>
+        <div className={style.navbarLeft} onClick={()=>{router.push('/home')}}>
           <img src='/asset/Zwallet.png' alt='logo' />
         </div>
         <div className={style.navbarRight}>
