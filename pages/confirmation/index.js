@@ -57,7 +57,7 @@ function confirmation () {
         userId: localStorage.getItem('userId'),
         amount: amount.amount,
         sender: user.userName,
-        receiver: target.serName,
+        receiver: target.userName,
         notes: notes.notes,
         balance: user.balance - amount.amount,
         destId: target.userId,

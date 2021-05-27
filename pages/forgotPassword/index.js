@@ -6,19 +6,16 @@ import { useRouter } from 'next/router'
 
 function login () {
   const router = useRouter()
-  const [login, setLogin] = useState({
-    data: null,
-    email: null,
-    password: null
+  const [data, setData] = useState({
+    email: null
   })
 
   const handleChange = (e) => {
     const target = e.target
     const value = target.value
     const name = e.target.name
-    console.log(name, value)
-    setLogin({
-      ...login,
+    setData({
+      ...data,
       [name]: value
     })
   }
@@ -31,35 +28,30 @@ function login () {
     }
   }, [])
 
-  const handleLogin = () => {
-    console.log('jalan')
-    const { email, password } = login
-    const form = { email, password }
-    console.log(email)
-    if (email !== undefined && password !== undefined) {
-      axios.post(`${process.env.DB_HOST}/users/login`, form)
-        .then(async (res) => {
-          setLogin(res.data)
-          Swal.fire(
-            'Success!'
-          )
-          localStorage.setItem('token', res.data.data.token)
-          await router.push('../home')
-          router.reload()
+  const handleLogin = async () => {
+    if (data.email !== null ) {
+      await axios.post(`${process.env.DB_HOST}/users/reset`, data)
+        .then( (res) => {
+          console.log(res);
+          Swal.fire({
+            icon: 'success',
+            titleText: 'Sent...',
+            text: 'Oke, terikirm!'
+          })
         })
         .catch((err) => {
+          console.log(err.response);
           Swal.fire({
             icon: 'error',
-            title: 'Oops...',
-            text: 'Akun anda belum terdaftar!'
+            title: 'Hmm...',
+            text: 'Kamu belum daftar :)'
           })
         })
     } else {
-      console.log('jalan else')
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'ada yang harus diisi!'
+        text: 'Isi dulu dong emailnya >_<'
       })
     }
   }
@@ -67,6 +59,7 @@ function login () {
   const handleGotoRegister = () => {
     router.push('../register')
   }
+  console.log(data);
   return (
     <div>
       <div className='register'>
@@ -90,22 +83,20 @@ function login () {
           <div className='registerContent'>
             <div className='regisStart'>
               <p>
-                Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users
+              Did You Forgot Your Password?
+              Don’t Worry, You Can Reset Your
+              Password In a Minutes.
               </p>
             </div>
             <div className='regisTransfer'>
-              <p>Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
+              <p>To reset your password, you must type your e-mail and we will send a link to your email and you will be directed to the reset password screens.</p>
             </div>
             <div className='regisForm'>
               <input type='email' name='email' placeholder='Enter your e-mail' onChange={(e) => handleChange(e)} /><br />
-              <input type='password' name='password' placeholder='Enter your password' onChange={(e) => handleChange(e)} />
-              <Link href='/forgotPassword'>
-                <a><p>Forgot Password</p></a>
-              </Link>
             </div>
             <div className='regsiButton'>
               <p onClick={() => { handleLogin() }} />
-              <button onClick={() => { handleLogin() }}>Login</button>
+              <button onClick={() => { handleLogin() }}>Confirm</button>
             </div>
             <div className='regisAlready'>
               <p>Don’t have an account? Let’s<span onClick={() => handleGotoRegister()} style={{ color: 'blue' }}> Sign Up</span></p>

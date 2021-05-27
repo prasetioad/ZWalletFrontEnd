@@ -4,21 +4,22 @@ import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-function login () {
+function index () {
   const router = useRouter()
-  const [login, setLogin] = useState({
-    data: null,
+  const [data, setData] = useState({
     email: null,
-    password: null
+    password: null,
+    repassword: null,
   })
 
   const handleChange = (e) => {
+    console.log(router.query.verify[2]);
     const target = e.target
     const value = target.value
     const name = e.target.name
-    console.log(name, value)
-    setLogin({
-      ...login,
+    data.email = router.query.verify[2]
+    setData({
+      ...data,
       [name]: value
     })
   }
@@ -29,37 +30,38 @@ function login () {
     if (isLogin !== null) {
       router.push('./home')
     }
+   
   }, [])
 
-  const handleLogin = () => {
-    console.log('jalan')
-    const { email, password } = login
-    const form = { email, password }
-    console.log(email)
-    if (email !== undefined && password !== undefined) {
-      axios.post(`${process.env.DB_HOST}/users/login`, form)
-        .then(async (res) => {
-          setLogin(res.data)
-          Swal.fire(
-            'Success!'
-          )
-          localStorage.setItem('token', res.data.data.token)
-          await router.push('../home')
-          router.reload()
+  const handleLogin = async () => {
+    if (data.password !== null ) {
+        delete data.repassword
+        console.log(data)
+      await axios.put(`${process.env.DB_HOST}/users/${router.query.verify[1]}`, data, {headers: {
+        authorization: `Bearer ${router.query.verify[0]}`
+      }})
+        .then( async(res) => {
+          console.log(res);
+         await Swal.fire({
+            icon: 'success',
+            titleText: 'Yups!',
+            text: 'Password berhasil diganti :D'
+          })
+          router.push('/login')
         })
         .catch((err) => {
+          console.log(err.response);
           Swal.fire({
             icon: 'error',
-            title: 'Oops...',
-            text: 'Akun anda belum terdaftar!'
+            title: 'Hmm...',
+            text: 'Kamu belum daftar :)'
           })
         })
     } else {
-      console.log('jalan else')
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'ada yang harus diisi!'
+        text: 'Isi dulu dong emailnya >_<'
       })
     }
   }
@@ -67,6 +69,7 @@ function login () {
   const handleGotoRegister = () => {
     router.push('../register')
   }
+  console.log(data);
   return (
     <div>
       <div className='register'>
@@ -90,22 +93,22 @@ function login () {
           <div className='registerContent'>
             <div className='regisStart'>
               <p>
-                Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users
+              Did You Forgot Your Password?
+              Don’t Worry, You Can Reset Your
+              Password In a Minutes.
               </p>
             </div>
             <div className='regisTransfer'>
-              <p>Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
+              <p>To reset your password, you must type your e-mail and we will send a link to your email and you will be directed to the reset password screens.</p>
             </div>
             <div className='regisForm'>
-              <input type='email' name='email' placeholder='Enter your e-mail' onChange={(e) => handleChange(e)} /><br />
-              <input type='password' name='password' placeholder='Enter your password' onChange={(e) => handleChange(e)} />
-              <Link href='/forgotPassword'>
-                <a><p>Forgot Password</p></a>
-              </Link>
+              <input type='password' name='password' placeholder='Create new password' onChange={(e) => handleChange(e)} />
+              <input type='password' name='repassword' placeholder='Create new password' onChange={(e) => handleChange(e)} />
+              {data && data.password === data.repassword ? <div></div>: <p style={{color: 'red'}}>Password not match!</p> }
             </div>
             <div className='regsiButton'>
               <p onClick={() => { handleLogin() }} />
-              <button onClick={() => { handleLogin() }}>Login</button>
+              <button onClick={() => { handleLogin() }}>Confirm</button>
             </div>
             <div className='regisAlready'>
               <p>Don’t have an account? Let’s<span onClick={() => handleGotoRegister()} style={{ color: 'blue' }}> Sign Up</span></p>
@@ -117,4 +120,4 @@ function login () {
   )
 }
 
-export default login
+export default index

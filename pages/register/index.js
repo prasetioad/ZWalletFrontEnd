@@ -76,7 +76,7 @@ function register () {
               <p>Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
             </div>
             <div className='regisForm'>
-              <input type='text' name='userName' placeholder='Enter your username' onChange={(e) => handleChange(e)} /> <br />
+              <input type='text' name='userName' placeholder='Enter your fullname' onChange={(e) => handleChange(e)} /> <br />
               <input type='email' name='email' placeholder='Enter your e-mail' onChange={(e) => handleChange(e)} /><br />
               <input type='password' name='password' placeholder='Create your password' onChange={(e) => handleChange(e)} />
             </div>
