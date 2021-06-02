@@ -17,9 +17,9 @@
 ![GitHub forks](https://img.shields.io/github/forks/scottydocs/README-template.md?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/scottydocs?style=social) -->
 
-Zwallet adalah aplikasi yang membuatmu bisa melakukan transaksi dengan mudah.
+Zwallet is an application that allows you to make transactions easily.
 
-Aplikasi ini dibuat menggunakan Next Js dan Express Js. Memiliki fitur realtime history transaksi. Mudah digunakan dimana saja.
+This application was created using Next Js and Express Js. Has a realtime transaction history feature. Easy to use anywhere.
 
 ## Built with
 
