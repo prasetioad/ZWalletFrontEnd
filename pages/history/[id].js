@@ -6,11 +6,28 @@ import Modal from 'react-modal'
 import Link from 'next/link'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import html2canvas from 'html2canvas';
+import { jsPDF } from "jspdf";
 
 function history ({item}) {
   const router = useRouter()
   const [state, setState] = useState()
   const [user, setUser] =useState()
+
+  function printDocument() {
+    const input = document.getElementById('divToPrint');
+    html2canvas(input)
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        console.log(imgData);
+        const pdf = new jsPDF();
+        pdf.addImage(imgData, 'JPEG', 0, 0);
+        // pdf.output('dataurlnewwindow');
+        pdf.save("download.pdf");
+      })
+    ;
+  }
+
 
   useEffect(() => {
     // if (router.query.id) {
@@ -48,7 +65,7 @@ function history ({item}) {
       <div className={stylesearch.homeMainRightSuccess}>
         <div className={stylehis.dashboardBottom}>
           <div className={stylehis.dashboardTransConfirm}>
-            <div className={stylesearch.dashHistory}>
+            <div className={stylesearch.dashHistory} id='divToPrint'>
               <div className={stylesearch.successTransanction}>
                 <div className={style.sortByTime}>
                   <img src='./asset/success.png' alt='' />
@@ -111,7 +128,7 @@ function history ({item}) {
                     <button>share</button>
                   </div>
                   <div>
-                    <Link href='/confirmation'><button>Download PDF</button></Link>
+                    <button onClick={()=>{printDocument()}}>Download PDF</button>
                   </div>
                   <div>
                     <Link href='/home'><button>Back to Home</button></Link>

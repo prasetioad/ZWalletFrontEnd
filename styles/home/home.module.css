@@ -18,6 +18,7 @@
     font-size: 18px;
     line-height: 31px;
     margin-left: auto;
+    align-items: stretch;
 }
 .homeMainLeft{
     display: flex;
@@ -28,8 +29,8 @@
     border-radius: 25px;
     width:270px;
     margin-right: 20px;
-    height: 678px;
-    margin-top: 40px;
+    height: 95%;
+    margin-top: 30px;
     margin-bottom: 40px;
     margin-left:110px;
 }
@@ -48,7 +49,7 @@
 }
 .dashboardIcon{margin-left: 40px; padding-right: 23px; }
 .dashLogout {  display: flex; justify-content: start; position: relative; margin-bottom: 30px; }
-.homeMainRight{display: flex; flex-direction: column; width: 100%; margin-top: 40px; 
+.homeMainRight{display: flex; flex-direction: column; width: 100%; margin-top: 30px; 
 }
 .dashboardBalance{
     width: 56.03vw;

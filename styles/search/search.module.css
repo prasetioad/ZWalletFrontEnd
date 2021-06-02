@@ -75,10 +75,10 @@
  .dashHistory{margin: 30px 30px;}
 
  .homeMainRight{display: flex; flex-direction: column; width: 860px; background: #FFFFFF; box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 25px; height: 850px; margin-top: 40px;
+    border-radius: 25px; height: 95%; margin-top: 30px;
     
  }.homeMainRightSuccess{display: flex; flex-direction: column; width: 860px; background: #FFFFFF; box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 25px; height: 920px; margin-top: 40px;
+    border-radius: 25px; height: 95%; margin-top: 30px;
  }
  
  .popUpCard{ width:  400px; display: flex; justify-content: center; align-items:center;}
