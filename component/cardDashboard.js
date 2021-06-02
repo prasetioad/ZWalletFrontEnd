@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import style from '../styles/home/home.module.css'
 import Link from 'next/link'
 import {FaAngleLeft} from 'react-icons/fa'
@@ -10,6 +10,9 @@ function cardDashboard ({side}) {
   const homeButton = () => {
 
   }
+  useEffect(() => {
+    console.log('sidebar effect run');
+  }, [])
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')

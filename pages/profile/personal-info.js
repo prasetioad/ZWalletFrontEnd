@@ -25,13 +25,12 @@ function personal () {
   }, [])
 
   const managePhone = () => {
-    if (user.phone.length == 0) {
+    if (user.phone == null) {
       router.push('/profile/addPhone')
     } else {
       router.push('/profile/managePhone')
     }
   }
-
   return (
     <div className={stylesearch.personalInfoWrapper}>
       <div className={stylesearch.homeMainRightProfile}>

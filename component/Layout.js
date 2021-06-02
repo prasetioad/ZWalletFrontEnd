@@ -9,7 +9,15 @@ import Login from '../pages/login'
 function Layout ({ children }) {
   const [theme, setTheme] = useState(false)
   const [sidebar, setSideBar] = useState(false)
+  const [winSize, setWinSize] = useState()
   useEffect(() => {
+    const handleResize = () => setWinSize(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    
+    // return () => {
+    //   window.removeEventListener("resize", handleResize);
+    // };
+    console.log('state layout jalan');
     const isLogin = () => {
       if (typeof window !== undefined) {
         if (localStorage.getItem('token')) {
@@ -29,9 +37,12 @@ function Layout ({ children }) {
       const bar = document.getElementById('bar')
       bar.style.display ='none'
     }
-  }, [])
+  }, [children])
 
-
+  if(winSize > 601 && sidebar == true){
+    const bar = document.getElementById('bar')
+    bar.style.display ='block'
+  }
   const handleSideBar =()=>{
     console.log('fungsi jalan');
     if(sidebar == false){
@@ -51,7 +62,9 @@ const showBar=()=>{
     bar.style.display ='none'
   }
 }
-console.log(sidebar);
+  
+
+// sizeReader()
   return (
     <div className='content' style={{margin: 'auto !important'}}>
       <Head>

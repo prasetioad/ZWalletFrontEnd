@@ -1,5 +1,6 @@
 .dashboardTransHistory{ width: 840px; height: 650px;  margin-left: 20px; margin-right: 20px; 
-    flex-direction: column;
+    flex-direction: column; 
+    overflow: auto;
     justify-content: space-between;
 color: white;}
 .dashboardTransConfirm{ width: 840px; height: auto;  margin-top: 20px; margin-left: 20px; margin-right: 20px; }
@@ -30,6 +31,7 @@ color: white;}
         justify-content: space-between;
         width: 95vw;
         margin-left: 0;
+        overflow: auto;
     }
   .homeMainRight{
       width: 95vw;
